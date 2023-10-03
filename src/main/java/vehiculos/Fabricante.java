@@ -5,7 +5,7 @@ public class Fabricante {
 
 	private String nombre;
 	private Pais pais;
-	private int totalFabricados;
+	int totalFabricados;
 	private static ArrayList<Fabricante> fabricas = new ArrayList<>();
 	
 	public Fabricante(String nombre, Pais pais) {

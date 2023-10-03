@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Pais {
 
 	private String nombre;
-	int totalFabricados;
+	public int totalFabricados;
 	private static ArrayList<Pais> paises = new ArrayList<>();
 	
 	public Pais(String nombre) {
