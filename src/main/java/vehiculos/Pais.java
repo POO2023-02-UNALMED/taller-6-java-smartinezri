@@ -4,12 +4,10 @@ import java.util.ArrayList;
 public class Pais {
 
 	private String nombre;
-	public int totalFabricados;
-	private static ArrayList<Pais> paises = new ArrayList<>();
+	static ArrayList<Pais> paises = new ArrayList<>();
 	
 	public Pais(String nombre) {
 		this.nombre = nombre;
-		paises.add(this);
 	}
 	
 	public void setNombre(String nombre) {
@@ -20,15 +18,23 @@ public class Pais {
 		return nombre;
 	}
 	
-	public String paisMasVendedor() {
-		Pais pais = paises.get(0);
-		
-		for(int i = 1; i<paises.size(); i++) {
-			if(paises.get(i).totalFabricados > pais.totalFabricados) {
-				pais = paises.get(i);
-			}
-		}
-		return pais.nombre;
-	}
-	
+	public static Pais paisMasVendedor() {
+		Pais mayor = null;
+        int a = 0;
+
+        for (var pais : paises) {
+            int b = 0;
+            for (var paistemp : paises) {
+                if (pais == paistemp) {
+                    b++;
+                }
+            }
+            if (a < b) {
+                a = b;
+                mayor = pais;
+            }
+        }
+
+        return mayor;
+    }
 }

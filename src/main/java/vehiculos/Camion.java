@@ -1,14 +1,17 @@
 package vehiculos;
+import java.util.ArrayList;
 
 public class Camion extends Vehiculo {
 
 	private int ejes;
-	private static int cantidadCamiones = 0;
+	private static ArrayList<Camion> camiones = new ArrayList<>();
+	//private static int cantidadCamiones = 0;
 	
 	public Camion(String placa, int puertas, int velocidadMaxima, String nombre, int precio, int peso, String traccion, Fabricante fabricante, int ejes) {
 		super(placa, 2, 80, nombre, precio, peso, "4X2", fabricante);
 		this.ejes = ejes;
-		Camion.cantidadCamiones++;
+		//Camion.cantidadCamiones++;
+		camiones.add(this);
 	}
 	
 	public void setEjes(int ejes) {
@@ -19,12 +22,12 @@ public class Camion extends Vehiculo {
 		return ejes;
 	}
 	
-	public static void setCantidadCamiones(int camiones) {
+	/*public static void setCantidadCamiones(int camiones) {
 		Camion.cantidadCamiones = camiones;
-	}
+	}*/
 	
 	public static int cantidadCamiones() {
-		return cantidadCamiones;
+		return camiones.size();
 	}
 	
 }

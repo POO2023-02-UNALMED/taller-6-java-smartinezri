@@ -5,15 +5,12 @@ public class Fabricante {
 
 	private String nombre;
 	private Pais pais;
-	int totalFabricados;
-	private static ArrayList<Fabricante> fabricas = new ArrayList<>();
+	static ArrayList<Fabricante> fabricas = new ArrayList<>();
 	
 	public Fabricante(String nombre, Pais pais) {
 		this.nombre = nombre;
 		this.pais = pais;
-		fabricas.add(this);
-		totalFabricados++;
-		pais.totalFabricados++;
+		Pais.paises.add(this.pais);
 	}
 	
 	public void setNombre(String nombre) {
@@ -32,15 +29,23 @@ public class Fabricante {
 		return pais;
 	}
 	
-	public String fabricaMayorVentas() {
-		Fabricante fabrica = fabricas.get(0);
-		
-		for(int i = 1; i<fabricas.size(); i++) {
-			if(fabricas.get(i).totalFabricados > fabrica.totalFabricados) {
-				fabrica = fabricas.get(i);
-			}
-		}
-		return fabrica.nombre;
-	}
-	
+	public static Fabricante fabricaMayorVentas() {
+        Fabricante mayor = null;
+        int a = 0;
+
+        for (var fabrica : fabricas) {
+            int b = 0;
+            for (var fabricatemp : fabricas) {
+                if (fabrica == fabricatemp) {
+                    b++;
+                }
+            }
+            if (a < b) {
+                a = b;
+                mayor = fabrica;
+            }
+        }
+
+        return mayor;
+    }
 }
