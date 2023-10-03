@@ -3,7 +3,7 @@ package vehiculos;
 public class Camion extends Vehiculo {
 
 	private int ejes;
-	private static int cantidadCamiones = 0;
+	protected static int cantidadCamiones = 0;
 	
 	public Camion(String placa, int puertas, int velocidadMaxima, String nombre, int precio, int peso, String traccion, Fabricante fabricante, int ejes) {
 		super(placa, 2, 80, nombre, precio, peso, "4X2", fabricante);
@@ -16,15 +16,15 @@ public class Camion extends Vehiculo {
 	}
 	
 	public int getEjes() {
-		return ejes;
+		return this.ejes;
 	}
 	
-	/*public static void setCantidadCamiones(int camiones) {
+	public static void setCantidadCamiones(int camiones) {
 		Camion.cantidadCamiones = camiones;
-	}*/
+	}
 	
 	public static int cantidadCamiones() {
-		return cantidadCamiones;
+		return Camion.cantidadCamiones;
 	}
 	
 }

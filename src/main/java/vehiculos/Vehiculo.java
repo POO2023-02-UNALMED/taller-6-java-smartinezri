@@ -10,7 +10,11 @@ public class Vehiculo {
 	private int peso;
 	private String traccion;
 	private Fabricante fabricante;
-	private static int cantidadVehiculos = 0;
+	protected static int cantidadVehiculos = 0;
+	
+	public Vehiculo() {
+		Vehiculo.cantidadVehiculos++;
+	}
 	
 	public Vehiculo(String placa, int puertas, int velocidadMaxima, String nombre, int precio, int peso, String traccion, Fabricante fabricante) {
 		this.placa = placa;
@@ -29,7 +33,7 @@ public class Vehiculo {
 	}
 	
 	public String getPlaca() {
-		return placa;
+		return this.placa;
 	}
 	
 	public void setPuertas(int puertas) {
@@ -37,7 +41,7 @@ public class Vehiculo {
 	}
 	
 	public int getPuertas() {
-		return puertas;
+		return this.puertas;
 	}
 	
 	public void setVelocidadMaxmima(int velocidadMaxima) {
@@ -45,7 +49,7 @@ public class Vehiculo {
 	}
 	
 	public int getVelocidadMaxima() {
-		return velocidadMaxima;
+		return this.velocidadMaxima;
 	}
 	
 	public void setNombre(String nombre) {
@@ -53,7 +57,7 @@ public class Vehiculo {
 	}
 	
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
 	}
 	
 	public void setPrecio(int precio) {
@@ -61,7 +65,7 @@ public class Vehiculo {
 	}
 	
 	public int getPrecio() {
-		return precio;
+		return this.precio;
 	}
 	
 	public void setPeso(int peso) {
@@ -69,7 +73,7 @@ public class Vehiculo {
 	}
 	
 	public int getPeso() {
-		return peso;
+		return this.peso;
 	}
 	
 	public void setTraccion(String traccion) {
@@ -77,7 +81,7 @@ public class Vehiculo {
 	}
 	
 	public String getTraccion() {
-		return traccion;
+		return this.traccion;
 	}
 	
 	public void setFabricante(Fabricante fabricante) {
@@ -85,7 +89,7 @@ public class Vehiculo {
 	}
 	
 	public Fabricante getFabricante() {
-		return fabricante;
+		return this.fabricante;
 	}
 	
 	public static void setCantidadVehiculos(int cantidadVehiculos) {
@@ -93,7 +97,7 @@ public class Vehiculo {
 	}
 	
 	public static int getCantidadVehiculos() {
-		return cantidadVehiculos;
+		return Vehiculo.cantidadVehiculos;
 	}
 	
 	public String vehiculosPorTipo() {
