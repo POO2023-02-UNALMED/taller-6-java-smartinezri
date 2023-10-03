@@ -22,7 +22,6 @@ public class Vehiculo {
 		this.traccion = traccion;
 		this.fabricante = fabricante;
 		Vehiculo.cantidadVehiculos++;
-		Fabricante.fabricas.add(this.fabricante);
 	}
 	
 	public void setPlaca(String placa) {
