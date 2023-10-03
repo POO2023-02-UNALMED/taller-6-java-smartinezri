@@ -101,9 +101,9 @@ public class Vehiculo {
 	}
 	
 	public String vehiculosPorTipo() {
-		int cantidadAutos = Automovil.cantidadAutos();
-		int cantidadCamionetas = Camioneta.cantidadCamionetas();
-		int cantidadCamiones = Camion.cantidadCamiones();
+		int cantidadAutos = Automovil.cantidadAutos;
+		int cantidadCamionetas = Camioneta.cantidadCamionetas;
+		int cantidadCamiones = Camion.cantidadCamiones;
 		
 		String s = String.format("Automoviles: %d\nCamionetas: %d\nCamiones: %d", cantidadAutos, cantidadCamionetas, cantidadCamiones);
 		return s;
